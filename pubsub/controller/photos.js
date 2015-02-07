@@ -18,6 +18,7 @@ var model = require('../models/photos');
      }
      //next middleware
      next();
+     model.trim();
    });
  }
 
@@ -25,5 +26,24 @@ var model = require('../models/photos');
  * Send photos to publish-subscribe socket in model
  */
 exports.send = function (req, res, next) {
+  var photos = _.clone(req.body);
+  model.send(photos, function (err) {
+    if (err){
+      return res.json(503, { error: true });
+    }
+    res.json(200, {error: null});
+  });
   next();
+}
+
+/**
+ * Get 10 photos from model
+ */
+exports.get = function (req, res) {
+  model.get(function (err, data) {
+    if (err){
+      return res.json(503, { error: true });
+    }
+    res.json(200, data);
+  });
 }

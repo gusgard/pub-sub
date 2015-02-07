@@ -1,7 +1,7 @@
 {
-  "name": "producer",
+  "name": "randomPhotos",
   "version": "0.0.0",
-  "description": "produce fake/faux data",
+  "description": "publish-subscribe server for node.js",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,9 @@
   "author": "gusgard",
   "license": "MIT",
   "dependencies": {
-    "arrandom": "0.0.3",
-    "request": "^2.34.0"
+    "axon": "^2.0.1",
+    "express": "^3.19.2",
+    "redis": "^0.12.1",
+    "underscore": "^1.7.0"
   }
 }

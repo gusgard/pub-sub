@@ -1,7 +1,7 @@
 {
-  "name": "producer",
+  "name": "webserver",
   "version": "0.0.0",
-  "description": "produce fake/faux data",
+  "description": "webserver node.js",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +9,9 @@
   "author": "gusgard",
   "license": "MIT",
   "dependencies": {
-    "arrandom": "0.0.3",
-    "request": "^2.34.0"
+    "axon": "^2.0.1",
+    "express": "^4.11.2",
+    "request": "^2.53.0",
+    "socket.io": "^1.3.3"
   }
 }
